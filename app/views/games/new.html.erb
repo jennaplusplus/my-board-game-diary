@@ -1,0 +1,22 @@
+<h1>Create a new game here</h1>
+<%= form_for @game, url: @url_path do |f| %>
+  <fieldset>
+    <legend>Game</legend>
+      <%= f.label :name, "Name: "%>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :genre, "Genre: "%>
+      <%= f.text_field :genre %>
+      <br>
+      <%= f.label :time_to_play, "Time to play (hours): "%>
+      <%= f.number_field :time_to_play, :value => 0.25, :min => 0, :step => 0.25 %>
+      <br>
+      <%= f.label :min_players, "Minimum number of players: "%>
+      <%= f.number_field :min_players, :value => 1, :min => 1, :step => 1 %>
+      <br>
+      <%= f.label :max_players, "Maximum number of players: "%>
+      <%= f.number_field :max_players, :value => 1, :min => 1, :step => 1 %>
+      <br>
+      <%= f.submit %>
+  </fieldset>
+<% end %>
