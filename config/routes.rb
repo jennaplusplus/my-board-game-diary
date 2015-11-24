@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :games
   resources :players
 
+  resources :meetups do
+    resources :events
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
