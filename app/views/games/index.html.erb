@@ -1,0 +1,11 @@
+<h1>Games central</h1>
+<% @games.each do |game| %>
+  <%= game.name %>
+  <ul>
+    <li><%= game.genre.capitalize %></li>
+    <li>Plays in <%= game.time_to_play %> hours</li>
+    <li><%= game.min_players %> to <%= game.max_players %> players</li>
+  </ul>
+<% end %>
+
+<%= link_to "Add a new game", new_game_path %>
