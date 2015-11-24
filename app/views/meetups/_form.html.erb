@@ -1,0 +1,15 @@
+<%= form_for @meetup, url: @url_path do |f| %>
+  <fieldset>
+    <legend>Meetup</legend>
+      <%= f.label :location, "Location: "%>
+      <%= f.text_field :location %>
+      <br>
+      <%= f.label :date, "Date: "%>
+      <%= f.date_field :date %>
+      <br>
+      <%= f.label :duration, "Duration (hours): "%>
+      <%= f.number_field :duration, min: 0, step: 0.5 %>
+      <br>
+      <%= f.submit "#{button_text}" %>
+  </fieldset>
+<% end %>
