@@ -23,6 +23,11 @@ class GamesController < ApplicationController
     redirect_to games_path
   end
 
+  def destroy
+    Game.destroy(params[:id])
+    redirect_to games_path
+  end
+
 
   private
 

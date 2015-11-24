@@ -1,4 +1,7 @@
 <h1>Games central</h1>
+
+<%= link_to "Add a new game", new_game_path %>
+
 <% @games.each do |game| %>
   <%= game.name %>
   <ul>
@@ -6,7 +9,6 @@
     <li>Plays in <%= game.time_to_play %> hours</li>
     <li><%= game.min_players %> to <%= game.max_players %> players</li>
     <li><%= link_to "Edit this game", edit_game_path(game) %></li>
+    <li><%= link_to "Delete this game", game_path(game), method: :delete, data: { confirm: 'Are you sure?' }  %></li>
   </ul>
 <% end %>
-
-<%= link_to "Add a new game", new_game_path %>
