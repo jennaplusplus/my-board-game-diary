@@ -17,9 +17,27 @@ games = [
   { name: "The Settlers of Catan",  time_to_play: 1.5,  genre: "strategy",    min_players: 3, max_players: 4 },
   { name: "Pandemic",               time_to_play: 1.5,  genre: "co-op",       min_players: 2, max_players: 4 },
   { name: "Battlestar Galactica",   time_to_play: 4,    genre: "thematic",    min_players: 3, max_players: 6 },
-  { name: "Power Grid",             time_to_play: 2.5,  genre: "strategy",    min_players: 2, max_players: 6 },
+  { name: "Power Grid",             time_to_play: 2.5,  genre: "strategy",    min_players: 2, max_players: 6 }
 ]
 
 games.each do |game|
   Game.create(game)
+end
+
+# Player info
+# t.string   "name"
+# t.string   "email"
+# t.text     "bio"
+# t.integer  "age"
+# t.string   "gender"
+
+players = [
+  { name: "Jenna",    email: "jennaplusplus@gmail.com",     bio: "Ada Dev Student",   age: 26, gender: "female" },
+  { name: "Ross",     email: "ross.nichols@live.com",       bio: "Microsoftie",       age: 26, gender: "male" },
+  { name: "Mallory",  email: "mallory.mcmanamon@gmail.com", bio: "Amazonian",         age: 28, gender: "female" },
+  { name: "Eric",     email: "eric@huskers.unl.edu",        bio: "UT Pythonista",     age: 28, gender: "male" }
+]
+
+players.each do |player|
+  Player.create(player)
 end

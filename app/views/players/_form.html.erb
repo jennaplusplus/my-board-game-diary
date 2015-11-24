@@ -1,0 +1,21 @@
+<%= form_for @player, url: @url_path do |f| %>
+  <fieldset>
+    <legend>Player</legend>
+      <%= f.label :name, "Name: "%>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :email, "Email: "%>
+      <%= f.text_field :email %>
+      <br>
+      <%= f.label :bio, "Bio: "%>
+      <%= f.text_area :bio %>
+      <br>
+      <%= f.label :age, "Age :" %>
+      <%= f.number_field :age, :min => 13, :step => 1 %>
+      <br>
+      <%= f.label :gender, "Gender :" %>
+      <%= f.text_field :gender %>
+      <br>
+      <%= f.submit "#{button_text}" %>
+  </fieldset>
+<% end %>

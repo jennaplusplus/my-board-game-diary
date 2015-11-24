@@ -1,0 +1,12 @@
+<h1>Players central</h1>
+
+<h3><%= link_to "Add a new player", new_player_path %></h3>
+
+<% @players.each do |player| %>
+  <%= player.name %>, <%= player.gender %>, age <%= player.age %>
+  <ul>
+    <li><%= player.bio %></li>
+    <li><%= link_to "Edit this player", edit_player_path(player) %></li>
+    <li><%= link_to "Delete this player", player_path(player), method: :delete, data: { confirm: 'Are you sure?' }  %></li>
+  </ul>
+<% end %>
