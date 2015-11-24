@@ -41,3 +41,18 @@ players = [
 players.each do |player|
   Player.create(player)
 end
+
+# Meetup info
+# t.date     "date"
+# t.float    "duration"
+# t.string   "location"
+
+meetups = [
+  { date: "2015-01-01", duration: 3,    location: "Jenna's house" },
+  { date: "2015-02-02", duration: 6,    location: "Mallory's house" },
+  { date: "2015-10-03", duration: 1.5,  location: "Ada Dev Academy" },
+]
+
+meetups.each do |meetup|
+  Meetup.create(meetup)
+end
