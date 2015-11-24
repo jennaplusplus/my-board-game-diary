@@ -5,6 +5,7 @@
     <li><%= game.genre.capitalize %></li>
     <li>Plays in <%= game.time_to_play %> hours</li>
     <li><%= game.min_players %> to <%= game.max_players %> players</li>
+    <li><%= link_to "Edit this game", edit_game_path(game) %></li>
   </ul>
 <% end %>
 
