@@ -3,7 +3,7 @@
 <h3><%= link_to "Add a new game", new_game_path %></h3>
 
 <% @games.each do |game| %>
-  <%= game.name %>
+  <%= link_to "#{game.name}", game_path(game) %>
   <ul>
     <li><%= game.genre.capitalize %></li>
     <li>Plays in <%= game.time_to_play %> hours</li>

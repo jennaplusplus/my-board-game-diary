@@ -13,6 +13,10 @@ class PlayersController < ApplicationController
     redirect_to players_path
   end
 
+  def show
+    @player = Player.find(params[:id])
+  end
+
   def edit
     @player = Player.find(params[:id])
     @url_path = player_path
