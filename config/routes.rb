@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   resources :games
   resources :players
 
+  patch '/meetups/:meetup_id/players' => 'meetups#add_players', as: :add_meetup_player
+
   resources :meetups do
+    resources :players, only: [:index, :show]
     resources :events
   end
 

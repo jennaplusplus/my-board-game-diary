@@ -1,6 +1,15 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.all
+
+    if request.path_info.include?('meetups')
+      @meetup = Meetup.find(params[:meetup_id])
+      @players = @meetup.players
+      render :meetups_players_index
+    else
+      @players = Player.all
+      render :index
+    end
+
   end
 
   def new

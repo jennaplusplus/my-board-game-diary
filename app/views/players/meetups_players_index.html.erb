@@ -1,0 +1,17 @@
+<h1> Players for the meetup: <%= @meetup.name %> </h1>
+<h3> So far, you have <%= @players.count %> player<%= "s" if @players.count != 1 %> at this meetup.</h3>
+<% if @players.count > 0 %>
+  <ul>
+    <% @players.each do |player| %>
+      <li>
+        <%= player.name %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @meetup, url: add_meetup_player_path(params[:meetup_id]), method: :patch do |f| %>
+  <%= f.label :players, "Player to add: "%>
+  <%= f.collection_select(:players, Player.all.where.not(:id => @meetup.player_ids), :id, :name) %>
+  <%= f.submit "Add Player" %>
+<% end %>

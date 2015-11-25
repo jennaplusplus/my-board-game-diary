@@ -33,6 +33,13 @@ class MeetupsController < ApplicationController
     redirect_to meetups_path
   end
 
+  def add_players
+    meetup = Meetup.find(params[:meetup_id])
+    player = Player.find(params[:meetup][:players])
+    meetup.players << player
+    redirect_to meetup_players_path
+  end
+
   def destroy
     Meetup.destroy(params[:id])
     redirect_to meetups_path
@@ -41,6 +48,6 @@ class MeetupsController < ApplicationController
   private
 
   def meetup_params
-    params.permit(meetup:[:location, :date, :duration])
+    params.permit(meetup:[:location, :date, :duration, :players])
   end
 end
