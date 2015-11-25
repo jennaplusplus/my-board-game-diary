@@ -4,9 +4,9 @@
     <legend>Event</legend>
       <%= f.label :game, "Game played: "%>
       <%= f.collection_select(:game_id, Game.all, :id, :name) %>
-
-
-      <%= f.hidden_field :meetup_id, :value => params[:meetup_id] %>
+      <br>
+      <%= f.label :players, "Add players from your meetup: "%>
+      <%= f.collection_check_boxes :players, @meetup.players, :id, :name %>
       <br>
       <%= f.submit %>
   </fieldset>

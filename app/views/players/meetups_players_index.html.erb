@@ -10,8 +10,14 @@
   </ul>
 <% end %>
 
-<%= form_for @meetup, url: add_meetup_player_path(params[:meetup_id]), method: :patch do |f| %>
-  <%= f.label :players, "Player to add: "%>
-  <%= f.collection_select(:players, Player.all.where.not(:id => @meetup.player_ids), :id, :name) %>
-  <%= f.submit "Add Player" %>
+<% if @meetup.players.count < Player.all.count %>
+  <%= form_for @meetup, url: add_meetup_player_path(params[:meetup_id]), method: :patch do |f| %>
+    <%= f.label :players, "Player to add: "%>
+    <%= f.collection_select(:players, Player.all.where.not(:id => @meetup.player_ids), :id, :name) %>
+    <%= f.submit "Add Player" %>
+  <% end %>
+<% else %>
+  <h3>That's every player!</h3>
 <% end %>
+
+<%= link_to "Back to the meetup", meetup_path(@meetup) %>

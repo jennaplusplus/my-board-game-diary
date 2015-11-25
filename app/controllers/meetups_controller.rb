@@ -8,7 +8,7 @@ class MeetupsController < ApplicationController
     @games = []
 
     @meetup.events.each do |event|
-      @games.push(Game.find(event.game_id))
+      @games.push(event.game)
     end
 
   end
