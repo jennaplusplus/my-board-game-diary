@@ -48,9 +48,9 @@ end
 # t.string   "location"
 
 meetups = [
-  { date: "2015-01-01", duration: 3,    location: "Jenna's house" },
-  { date: "2015-02-02", duration: 6,    location: "Mallory's house" },
-  { date: "2015-10-03", duration: 1.5,  location: "Ada Dev Academy" },
+  { name: "New Year's Party",   date: "2015-01-01", duration: 3,    location: "Jenna's house" },
+  { name: "Groundhog Day",      date: "2015-02-02", duration: 6,    location: "Mallory's house" },
+  { name: "Ada Game Night",     date: "2015-10-03", duration: 1.5,  location: "Ada Dev Academy" },
 ]
 
 meetups.each do |meetup|

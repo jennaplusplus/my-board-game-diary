@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124194610) do
+ActiveRecord::Schema.define(version: 20151125205811) do
 
   create_table "events", force: :cascade do |t|
     t.float    "duration"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20151124194610) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events_players", id: false, force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "player_id"
+  end
+
+  add_index "events_players", ["event_id"], name: "index_events_players_on_event_id"
+  add_index "events_players", ["player_id"], name: "index_events_players_on_player_id"
+
   create_table "games", force: :cascade do |t|
     t.string   "name"
     t.float    "time_to_play"
@@ -33,13 +41,31 @@ ActiveRecord::Schema.define(version: 20151124194610) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "games_players", id: false, force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "player_id"
+  end
+
+  add_index "games_players", ["game_id"], name: "index_games_players_on_game_id"
+  add_index "games_players", ["player_id"], name: "index_games_players_on_player_id"
+
   create_table "meetups", force: :cascade do |t|
     t.date     "date"
     t.float    "duration"
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.text     "notes"
   end
+
+  create_table "meetups_players", id: false, force: :cascade do |t|
+    t.integer "meetup_id"
+    t.integer "player_id"
+  end
+
+  add_index "meetups_players", ["meetup_id"], name: "index_meetups_players_on_meetup_id"
+  add_index "meetups_players", ["player_id"], name: "index_meetups_players_on_player_id"
 
   create_table "players", force: :cascade do |t|
     t.string   "name"
