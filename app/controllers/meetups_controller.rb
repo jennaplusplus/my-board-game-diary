@@ -5,6 +5,12 @@ class MeetupsController < ApplicationController
 
   def show
     @meetup = Meetup.find(params[:id])
+    @games = []
+
+    @meetup.events.each do |event|
+      @games.push(Game.find(event.game_id))
+    end
+
   end
 
   def new

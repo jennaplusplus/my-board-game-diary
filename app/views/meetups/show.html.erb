@@ -1,1 +1,12 @@
 <h1>Details for the meetup <%= @meetup.location %> on <%= @meetup.date %></h1>
+
+<h3><%= link_to "Add a game event to this meetup", new_meetup_event_path(params[:id]) %> </h3>
+
+Games played at this meetup:
+<ul>
+  <% @games.each do |game| %>
+    <li>
+      <%= game.name %>
+    </li>
+  <% end %>
+</ul>

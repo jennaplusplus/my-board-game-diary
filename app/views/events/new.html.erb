@@ -1,0 +1,11 @@
+<h1>New Event</h1>
+<%= form_for @event, url: @url_path do |f| %>
+  <fieldset>
+    <legend>Event</legend>
+      <%= f.label :game, "Game played: "%>
+      <%= f.collection_select(:game_id, Game.all, :id, :name) %>
+      <%= f.hidden_field :meetup_id, :value => params[:meetup_id] %>
+      <br>
+      <%= f.submit %>
+  </fieldset>
+<% end %>
