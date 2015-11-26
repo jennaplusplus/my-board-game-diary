@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125205811) do
+ActiveRecord::Schema.define(version: 20151126033228) do
 
   create_table "events", force: :cascade do |t|
     t.float    "duration"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20151125205811) do
     t.integer  "max_players"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.text     "description"
   end
 
   create_table "games_players", id: false, force: :cascade do |t|

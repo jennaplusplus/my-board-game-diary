@@ -36,6 +36,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.permit(game:[:name, :genre, :time_to_play])
+    params.permit(game:[:name, :genre, :description, :time_to_play, :min_players, :max_players])
   end
 end
