@@ -1,1 +1,16 @@
 <h1>Details for <%= @player.name %></h1>
+
+<%= link_to "Edit this player", edit_player_path(@player) %>
+
+<h2>Overview</h2>
+  <p>
+    <strong><%= @player.name %></strong> is <%= @player.age %> years old.
+  </p>
+
+<h2>Bio</h2>
+  <p>
+    <%= simple_format @player.bio %>
+  </p>
+
+
+<%= link_to "Delete this player", player_path(@player), method: :delete, data: { confirm: 'Are you sure?' }  %>
