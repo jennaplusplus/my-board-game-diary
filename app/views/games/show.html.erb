@@ -1,1 +1,17 @@
 <h1>Details for <%= @game.name %></h1>
+<%= link_to "Edit this game", edit_game_path(@game) %>
+
+<h2>Overview</h2>
+  <p>
+    <strong><%= @game.name %></strong> is a <%= @game.genre.downcase %> game
+    for <%= @game.min_players %> to <%= @game.max_players %> players.
+    This game takes approximately <%= @game.time_to_play %> hour<%= "s" if @game.time_to_play != 1 %> to play.
+  </p>
+
+<h2>Description</h2>
+  <p>
+    <strong><%= @game.name %></strong> is a <%= @game.genre.downcase %> game
+    for <%= @game.min_players %> to <%= @game.max_players %> players.
+  </p>
+
+<%= link_to "Delete this game", game_path(@game), method: :delete, data: { confirm: 'Are you sure?' } %>
