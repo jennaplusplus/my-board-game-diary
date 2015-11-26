@@ -2,13 +2,24 @@
 
 <h3><%= link_to "Add a new game", new_game_path %></h3>
 
-<% @games.each do |game| %>
-  <%= link_to "#{game.name}", game_path(game) %>
-  <ul>
-    <li><%= game.genre.capitalize %></li>
-    <li>Plays in <%= game.time_to_play %> hours</li>
-    <li><%= game.min_players %> to <%= game.max_players %> players</li>
-    <li><%= link_to "Edit this game", edit_game_path(game) %></li>
-    <li><%= link_to "Delete this game", game_path(game), method: :delete, data: { confirm: 'Are you sure?' }  %></li>
-  </ul>
-<% end %>
+<h4>Click each game to see details or to edit/delete</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Number of Players</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= link_to "#{game.name}", game_path(game) %></td>
+        <td><%= game.genre.capitalize %></td>
+        <td><%= game.min_players %> to <%= game.max_players %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
