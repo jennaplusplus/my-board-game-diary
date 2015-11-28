@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: LightSteelBlue;
+  margin: auto;
+  width: 960px;
+}
+
+#title {
+  text-align: center;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 30px;
+}
+
+.home_button {
+  font-family: 'Ruda', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin: auto;
+  height: auto;
+  width: 300px;
+  border-radius: 25px;
+  border: 2px dotted #ECE3D1;
+}
+
+.home_button a {
+  color: white;
+  text-decoration: none;
+}
+
+#meetups {
+  background-color: #13156C;
+}
+
+#players {
+  background-color: #471657;
+}
+
+#games {
+  background-color: #921C59;
+}
