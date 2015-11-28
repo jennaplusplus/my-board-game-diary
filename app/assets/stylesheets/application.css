@@ -26,30 +26,30 @@ body {
   font-size: 30px;
 }
 
-.home_button {
-  font-family: 'Ruda', sans-serif;
-  font-size: 18px;
+.home_button a {
+  font-family: 'Capriola', sans-serif;
+  font-size: 24px;
   text-align: center;
   margin: auto;
   height: auto;
   width: 300px;
   border-radius: 25px;
   border: 2px dotted #ECE3D1;
-}
-
-.home_button a {
+  padding-top: 15px;
+  padding-bottom: 15px;
   color: white;
   text-decoration: none;
+  display: block;
 }
 
-#meetups {
+#meetups a {
   background-color: #13156C;
 }
 
-#players {
+#players a {
   background-color: #471657;
 }
 
-#games {
+#games a {
   background-color: #921C59;
 }
