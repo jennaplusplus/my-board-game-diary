@@ -32,10 +32,10 @@ end
 # t.string   "gender"
 
 players = [
-  { name: "Jenna",    email: "jennaplusplus@gmail.com",     bio: "Ada Dev Student",   age: 26, gender: "female" },
-  { name: "Ross",     email: "ross.nichols@live.com",       bio: "Microsoftie",       age: 26, gender: "male" },
-  { name: "Mallory",  email: "mallory.mcmanamon@gmail.com", bio: "Amazonian",         age: 28, gender: "female" },
-  { name: "Eric",     email: "eric@huskers.unl.edu",        bio: "UT Pythonista",     age: 28, gender: "male" }
+  { name: "Jenna",    email: "jennaplusplus@gmail.com",     bio: "Ada Dev Student",   age: 26, gender: "female",  city: "Seattle", state: "WA" },
+  { name: "Ross",     email: "ross.nichols@live.com",       bio: "Microsoftie",       age: 26, gender: "male",    city: "Seattle", state: "WA" },
+  { name: "Mallory",  email: "mallory.mcmanamon@gmail.com", bio: "Amazonian",         age: 28, gender: "female",  city: "Seattle", state: "WA" },
+  { name: "Eric",     email: "eric@huskers.unl.edu",        bio: "UT Pythonista",     age: 28, gender: "male",    city: "Seattle", state: "WA" }
 ]
 
 players.each do |player|

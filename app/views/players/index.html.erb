@@ -8,14 +8,14 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Age</th>
+      <th>Location</th>
     </tr>
   </thead>
   <tbody>
     <% @players.each do |player| %>
       <tr>
         <td><%= link_to "#{player.name}", player_path(player) %></td>
-        <td><%= player.age %></td>
+        <td><%= player.city %>, <%= player.state %></td>
       </tr>
     <% end %>
   </tbody>
