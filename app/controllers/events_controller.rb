@@ -29,7 +29,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.permit(event:[:game_id, :players])
+    params.permit(event:[:game_id, :players, :duration, :outcome, :rating, :notes])
   end
 
 end
