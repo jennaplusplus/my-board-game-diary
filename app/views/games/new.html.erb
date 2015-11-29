@@ -1,3 +1,9 @@
-<h1>Enter a new game</h1>
+<header id="title">
+  <h1>Enter a new game</h1>
+</header>
 
 <%= render partial: 'form', locals: { :button_text => "New Game" } %>
+
+<footer id="footer">
+  <%= link_to "Back to Games", games_path %>
+</footer>

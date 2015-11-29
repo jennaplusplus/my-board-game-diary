@@ -1,16 +1,22 @@
-<h1>Details for <%= @game.name %></h1>
-<%= link_to "Edit this game", edit_game_path(@game) %>
+<header id="title">
+  <h1><%= @game.name %></h1>
+</header>
 
-<h2>Overview</h2>
-  <p>
-    <strong><%= @game.name %></strong> is a <%= @game.genre.downcase %> game
-    for <%= @game.min_players %> to <%= @game.max_players %> players.
-    This game takes approximately <%= @game.time_to_play %> hour<%= "s" if @game.time_to_play != 1 %> to play.
-  </p>
+<%= link_to "Edit this game", edit_game_path(@game), :class => "do_button" %>
+<%= link_to "Delete this game", game_path(@game), method: :delete, data: { confirm: 'Are you sure?' }, :class => "do_button" %>
 
-<h2>Description</h2>
-  <p>
-    <%= simple_format @game.description %>
-  </p>
+<section class="information">
+  <h2 class="subtitle">Overview</h2>
+  <strong><%= @game.name %></strong> is a <%= @game.genre.downcase %> game
+  for <%= @game.min_players %> to <%= @game.max_players %> players.
+  This game takes approximately <%= @game.time_to_play %> hour<%= "s" if @game.time_to_play != 1 %> to play.
+</section>
 
-<%= link_to "Delete this game", game_path(@game), method: :delete, data: { confirm: 'Are you sure?' } %>
+<section class="information">
+  <h2 class="subtitle">Description</h2>
+  <%= simple_format @game.description %>
+</section>
+
+<footer id="footer">
+  <%= link_to "Back to Games", games_path %>
+</footer>
