@@ -87,6 +87,12 @@ body {
 
 .information h2 {
   font-family: 'Patrick Hand SC', cursive;
+  font-size: 35px;
+}
+
+.information h2 a {
+  font-size: 35px;
+  color: #921C59;
 }
 
 .information table {
