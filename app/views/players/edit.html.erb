@@ -1,3 +1,9 @@
-<h1>Edit a player</h1>
+<header id="title">
+  <h1>Edit a player</h1>
+</header>
 
 <%= render partial: 'form', locals: { :button_text => "Edit Player", :method_type => :patch } %>
+
+<footer id="footer">
+  <%= link_to "Back to #{@player.name}", player_path(@player) %>
+</footer>
