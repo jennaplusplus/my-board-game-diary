@@ -5,6 +5,8 @@ class MeetupsController < ApplicationController
 
   def show
     @meetup = Meetup.find(params[:id])
+    @players = @meetup.players
+
     @games = []
 
     @meetup.events.each do |event|
@@ -38,6 +40,13 @@ class MeetupsController < ApplicationController
     player = Player.find(params[:meetup][:players])
     meetup.players << player
     redirect_to meetup_players_path
+  end
+
+  def remove_player
+    meetup = Meetup.find(params[:meetup_id])
+    player = Player.find(params[:id])
+    meetup.players.delete(player)
+    redirect_to meetup_path(meetup)
   end
 
   def destroy

@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+
+
   resources :games
   resources :players
 
   patch '/meetups/:meetup_id/players' => 'meetups#add_players', as: :add_meetup_player
+  patch '/meetups/:meetup_id/players/:id/remove' => 'meetups#remove_player', as: :remove_meetup_player
+
 
   resources :meetups do
     resources :players, only: [:index, :show]

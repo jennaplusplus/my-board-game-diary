@@ -4,6 +4,9 @@
 
 <h3><%= link_to "Record a new meetup", new_meetup_path %></h3>
 
+<h4>Click each meetup to see details, add/remove players and game events, or to edit/delete</h4>
+
+
 <table>
   <thead>
     <tr>
@@ -17,7 +20,7 @@
       <tr>
         <td><%= link_to meetup.name, meetup_path(meetup) %></td>
         <td><%= meetup.location %></td>
-        <td><%= meetup.date %></td>
+        <td><%= meetup.date.strftime("%b %d, %Y") %></td>
       </tr>
     <% end %>
   </tbody>

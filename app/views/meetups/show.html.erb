@@ -1,13 +1,31 @@
-<h1>Details for the meetup <%= @meetup.location %> on <%= @meetup.date %></h1>
+<header id="title">
+  <h1>"<%= @meetup.name %>" on <%= @meetup.date.strftime("%b %d, %Y") %></h1>
+</header>
 
 <h3>Step 1: <%= link_to "Add players to this meetup", meetup_players_path(params[:id]) %> </h3>
+
+<% if @players.count > 0 %>
+  Players at this meetup (so far!):
+  <ul>
+    <% @players.each do |player| %>
+      <li>
+        <%= player.name %> <%= link_to "(remove?)", remove_meetup_player_path(meetup_id: params[:id], id: player.id), method: :patch %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
 <h3>Steps 2-100: <%= link_to "Add game events to this meetup", new_meetup_event_path(params[:id]) %> </h3>
 
-Games played at this meetup:
-<ul>
-  <% @games.each do |game| %>
-    <li>
-      <%= game.name %>
-    </li>
-  <% end %>
-</ul>
+
+<% if @games.count > 0 %>
+  Games played at this meetup:
+  <ul>
+    <% @games.each do |game| %>
+      <li>
+        <%= game.name %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
