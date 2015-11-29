@@ -1,4 +1,31 @@
-<h1>Show this event</h1>
-<% @players.each do |player| %>
-  <%= player.name %>
-<% end %>
+<header id="title">
+  <h1><%= @event.game.name %> at "<%= @event.meetup.name %>"</h1>
+</header>
+
+<table>
+  <thead>
+
+  </thead>
+  <tbody>
+    <tr>
+      <td>Players</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Notes</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Rating</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

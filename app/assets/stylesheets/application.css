@@ -42,8 +42,20 @@ body {
   display: block;
 }
 
-.new_button a {
-  
+.do_button {
+  background-color: #0E0D37;
+  font-family: 'Capriola', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  height: auto;
+  width: 200px;
+  border-radius: 25px;
+  border: 2px dotted #ECE3D1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+  text-decoration: none;
+  display: block;
 }
 
 #meetups a {
@@ -60,4 +72,29 @@ body {
 
 #new_link {
   font-family: 'Capriola', sans-serif;
+}
+
+.information {
+  font-family: 'Dosis', sans-serif;
+  font-size: 25px;
+}
+
+.information a {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 25px;
+  color: #13156C;
+}
+
+.information h2 {
+  font-family: 'Patrick Hand SC', cursive;
+}
+
+#footer {
+  padding-top: 50px;
+}
+
+#footer a {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 25px;
+  color: #13156C;
 }
