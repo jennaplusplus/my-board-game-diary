@@ -42,6 +42,10 @@ body {
   display: block;
 }
 
+.new_button a {
+  
+}
+
 #meetups a {
   background-color: #13156C;
 }
@@ -52,4 +56,8 @@ body {
 
 #games a {
   background-color: #921C59;
+}
+
+#new_link {
+  font-family: 'Capriola', sans-serif;
 }
