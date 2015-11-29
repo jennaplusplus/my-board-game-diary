@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128020938) do
+ActiveRecord::Schema.define(version: 20151129210957) do
 
   create_table "events", force: :cascade do |t|
     t.float    "duration"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151128020938) do
     t.integer  "meetup_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "rating"
   end
 
   create_table "events_players", id: false, force: :cascade do |t|
