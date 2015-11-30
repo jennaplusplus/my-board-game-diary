@@ -103,6 +103,10 @@ body {
   padding-right: 50px;
 }
 
+.information table tr td a {
+  color: #921C59;
+}
+
 #footer {
   padding-top: 50px;
 }
@@ -131,6 +135,22 @@ body {
 
 #games_form input[type="submit"] {
   margin-left: 320px;
+}
+
+#add_players_form {
+  margin-top: 50px;
+}
+
+#add_players_form label {
+  width: 150px;
+}
+
+#add_players_form select {
+  font-size: 25px;
+}
+
+#no_more_players {
+  padding-top: 25px;
 }
 
 .form_text_area label, .form_text_area textarea {

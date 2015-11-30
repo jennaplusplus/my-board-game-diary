@@ -1,23 +1,40 @@
-<h1> Players for the meetup: <%= @meetup.name %> </h1>
-<h3> So far, you have <%= @players.count %> player<%= "s" if @players.count != 1 %> at this meetup.</h3>
-<% if @players.count > 0 %>
-  <ul>
-    <% @players.each do |player| %>
-      <li>
-        <%= player.name %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<header id="title">
+  <h1>Players for this meetup</h1>
+</header>
+
+<section class="information">
+  So far, you have <%= @players.count %> player<%= "s" if @players.count != 1 %> at this meetup.
+  <% if @players.count > 0 %>
+    <table>
+      <tbody>
+        <% @players.each do |player| %>
+          <tr>
+            <td><%= player.name %> <%= link_to "(remove?)", remove_meetup_player_path(meetup_id: params[:meetup_id], id: player.id), method: :patch %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  </table>
+</section>
 
 <% if @meetup.players.count < Player.all.count %>
+
   <%= form_for @meetup, url: add_meetup_player_path(params[:meetup_id]), method: :patch do |f| %>
-    <%= f.label :players, "Player to add: "%>
-    <%= f.collection_select(:players, Player.all.where.not(:id => @meetup.player_ids), :id, :name) %>
-    <%= f.submit "Add Player" %>
+    <fieldset class="form" id="add_players_form">
+      <legend>Add Players to this Meetup</legend>
+        <%= f.label :players, "Player to add: "%>
+        <%= f.collection_select(:players, Player.all.where.not(:id => @meetup.player_ids), :id, :name) %>
+        <%= f.submit "Add Player" %>
+    </fieldset>
   <% end %>
 <% else %>
-  <h3>That's every player!</h3>
+  <section class="information" id="no_more_players">
+    <strong>No more players to add!</strong> <%= link_to "(create one)", new_player_path %>
+  </section>
 <% end %>
 
-<%= link_to "Back to the meetup", meetup_path(@meetup) %>
+
+<footer id="footer">
+  <%= link_to "Back to #{@meetup.name}", meetup_path(@meetup) %>
+</footer>
