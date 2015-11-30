@@ -152,6 +152,14 @@ a.event_link {
   width: 250px;
 }
 
+#events_form .collection_boxes label {
+  width: auto;
+}
+
+#events_form input[type="submit"] {
+  margin-left: 260px;
+}
+
 #add_players_form {
   margin-top: 50px;
 }
@@ -168,9 +176,11 @@ a.event_link {
   padding-top: 25px;
 }
 
-.form_text_area label, .form_text_area textarea {
+.form_text_area * {
+  font-size: 20px;
   display: inline-block;
   vertical-align: middle;
+  margin-top: 10px;
 }
 
 .form input[type="submit"] {

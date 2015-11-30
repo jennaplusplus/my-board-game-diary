@@ -1,24 +1,32 @@
 <%= form_for @event, url: @url_path do |f| %>
   <fieldset class="form" id="events_form">
     <legend>Event</legend>
-      <%= f.label :game_id, "Game played: "%>
-      <%= f.collection_select(:game_id, Game.all, :id, :name) %>
-      <br>
-      <%= f.label :players, "Add players from your meetup: "%>
-      <%= f.collection_check_boxes :players, @meetup.players, :id, :name %>
-      <br>
-      <%= f.label :duration, "How long did it take? (hours) "%>
-      <%= f.number_field :duration, :min => 0, :max => 8, :step => 0.5 %>
-      <br>
-      <%= f.label :outcome, "Describe the outcome of the game (e.g., who won?): "%>
-      <%= f.text_area :outcome, cols: 30, rows: 5 %>
-      <br>
-      <%= f.label :rating, "Rate this game on a scale of 1 (worst game ever) to 10 (best game ever) :"%>
-      <%= f.number_field :rating, :min => 1, :max => 10, :step => 1 %>
-      <br>
-      <%= f.label :notes, "Other notes? "%>
-      <%= f.text_area :notes, cols: 30, rows: 5 %>
-      <br>
+      <div class="form_text_area">
+        <%= f.label :game_id, "Game played: "%>
+        <%= f.collection_select(:game_id, Game.all, :id, :name) %>
+      </div>
+      <div class="form_text_area">
+        <%= f.label :players, "Add players from your meetup: "%>
+        <span class="collection_boxes">
+          <%= f.collection_check_boxes :players, @meetup.players, :id, :name %>
+        </span>
+      </div>
+      <div class="form_text_area">
+        <%= f.label :duration, "How long did it take? (hours) "%>
+        <%= f.number_field :duration, :min => 0, :max => 8, :step => 0.5 %>
+      </div>
+      <div class="form_text_area">
+        <%= f.label :outcome, "Describe the outcome of the game (e.g., who won?): "%>
+        <%= f.text_area :outcome, cols: 30, rows: 5 %>
+      </div>
+      <div class="form_text_area">
+        <%= f.label :rating, "Rate this game on a scale of 1 (worst game ever) to 10 (best game ever) :"%>
+        <%= f.number_field :rating, :min => 1, :max => 10, :step => 1 %>
+      </div>
+      <div class="form_text_area">
+        <%= f.label :notes, "Other notes? "%>
+        <%= f.text_area :notes, cols: 30, rows: 5 %>
+      </div>
       <%= f.submit "#{button_text}" %>
   </fieldset>
 <% end %>
