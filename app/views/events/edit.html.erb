@@ -1,0 +1,9 @@
+<header id="title">
+  <h1>Edit an event</h1>
+</header>
+
+<%= render partial: 'form', locals: { :button_text => "Edit Event", :method_type => :patch } %>
+
+<footer id="footer">
+  <%= link_to "Back to this event", meetup_event_path(meetup_id: params[:id], id: @event.id) %>
+</footer>

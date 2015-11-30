@@ -50,7 +50,7 @@
       <tr>
         <td><strong>Rating:</strong></td>
         <td><% if @event.rating.present? %>
-              <%= @event.rating "out of 10" %>
+              <%= @event.rating %> out of 10
             <% else %>
               <em>none entered</em>
             <% end %>
