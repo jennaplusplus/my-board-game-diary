@@ -45,6 +45,6 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.permit(player:[:name, :email, :bio, :age, :gender])
+    params.permit(player:[:name, :email, :bio, :age, :city, :state])
   end
 end

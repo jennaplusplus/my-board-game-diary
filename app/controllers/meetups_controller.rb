@@ -57,6 +57,6 @@ class MeetupsController < ApplicationController
   private
 
   def meetup_params
-    params.permit(meetup:[:location, :date, :duration, :players])
+    params.permit(meetup:[:name, :location, :date, :duration, :players])
   end
 end
