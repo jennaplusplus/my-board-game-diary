@@ -28,7 +28,11 @@ class EventsController < ApplicationController
   end
 
   def update
-    Event.update(params[:id], event_params[:event])
+    event = Event.update(params[:id], event_params[:event])
+    player_ids = params[:event][:players]
+    player_ids.pop
+    players = Player.find(player_ids)
+    event.players = players
     redirect_to meetup_event_path(meetup_id: params[:meetup_id], id: params[:id])
   end
 

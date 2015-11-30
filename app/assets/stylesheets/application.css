@@ -148,7 +148,8 @@ a.event_link {
 }
 
 #events_form label {
-  width: 310px;
+  font-size: 20px;
+  width: 250px;
 }
 
 #add_players_form {
