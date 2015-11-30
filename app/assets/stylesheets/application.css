@@ -99,12 +99,22 @@ body {
   padding-top: 25px;
 }
 
+#event_info {
+  padding-top: 0px;
+}
+
 .information table tr td {
   padding-right: 50px;
 }
 
-.information table tr td a {
-  color: #921C59;
+a.remove_link {
+  color: #13156C;
+}
+
+a.event_link {
+  color: #13156C;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 30px;
 }
 
 #footer {

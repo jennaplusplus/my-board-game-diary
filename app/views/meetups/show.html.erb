@@ -13,7 +13,7 @@
       <tbody>
         <% @players.each do |player| %>
           <tr>
-            <td><%= player.name %> <%= link_to "(remove?)", remove_meetup_player_path(meetup_id: params[:id], id: player.id), method: :patch %></td>
+            <td><%= player.name %> <%= link_to "(remove?)", remove_meetup_player_path(meetup_id: params[:id], id: player.id), method: :patch, :class => "remove_link" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -24,13 +24,13 @@
 <section class="information">
   <h2 class="subtitle">Steps 2-100: <%= link_to "Add game events to this meetup", new_meetup_event_path(params[:id]) %> </h2>
   <% if @games.count > 0 %>
-    Game events at this meetup (click for details):
+    Game events at this meetup (click for details or to edit/delete):
     <table>
       <tbody>
         <% @meetup.events.each do |event| %>
           <tr>
             <td>
-              <%= link_to event.game.name, meetup_event_path(meetup_id: params[:id], id: event.id) %>
+              <%= link_to event.game.name, meetup_event_path(meetup_id: params[:id], id: event.id), :class => "event_link" %>
             </td>
           </tr>
         <% end %>
