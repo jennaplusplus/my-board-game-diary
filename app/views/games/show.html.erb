@@ -4,6 +4,7 @@
 
 <%= link_to "Edit this game", edit_game_path(@game), class: "btn btn-info" %>
 <%= link_to "Delete this game", game_path(@game), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<%= link_to "Back to Games", games_path, class: "btn btn-default" %>
 
 <div class="row">
   <div class="col-md-12">
@@ -20,5 +21,3 @@
     </p>
   </div>
 </div>
-
-<%= link_to "Back to Games", games_path, class: "btn btn-default" %>

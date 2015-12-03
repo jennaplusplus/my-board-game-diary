@@ -2,8 +2,6 @@
   <h1>Edit a game</h1>
 </header>
 
-<%= render partial: 'form', locals: { :button_text => "Edit Game", :method_type => :patch } %>
+<%= render partial: 'form', locals: { button_text: "Edit Game", method: :patch } %>
 
-<footer id="footer">
-  <%= link_to "Back to #{@game.name}", game_path(@game) %>
-</footer>
+<%= link_to "Back to #{@game.name}", game_path(@game), class: "btn btn-default" %>

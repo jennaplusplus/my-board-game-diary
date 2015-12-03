@@ -5,7 +5,6 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
-    @url_path = games_path
   end
 
   def create
@@ -19,7 +18,6 @@ class GamesController < ApplicationController
 
   def edit
     @game = Game.find(params[:id])
-    @url_path = game_path
   end
 
   def update

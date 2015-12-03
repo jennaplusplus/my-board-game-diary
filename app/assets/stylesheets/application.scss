@@ -14,3 +14,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.narrow {
+  width: 25%;
+  display: inline-block;
+}
+
+.footer {
+  margin-top: 10px;
+}
