@@ -1,9 +1,7 @@
-<header id="title">
+<div class="page-header">
   <h1>Enter a new player</h1>
-</header>
+</div>
 
-<%= render partial: 'form', locals: { :button_text => "New Player" } %>
+<%= render partial: 'form', locals: { button_text: "New Player", method: :post } %>
 
-<footer id="footer">
-  <%= link_to "Back to Players", players_path %>
-</footer>
+<%= link_to "Back to Players", players_path, class: "btn btn-default footer" %>

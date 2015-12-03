@@ -14,7 +14,6 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
-    @url_path = players_path
   end
 
   def create
@@ -28,7 +27,6 @@ class PlayersController < ApplicationController
 
   def edit
     @player = Player.find(params[:id])
-    @url_path = player_path
   end
 
   def update
