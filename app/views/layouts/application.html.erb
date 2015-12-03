@@ -6,7 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <link href='https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Nunito:400,300,700|Ruda:400,700,900|Capriola|Titillium+Web|Dosis' rel='stylesheet' type='text/css'>
-<%= yield %>
 
+<body>
+  <div class="container">
+    <%= yield %>
+
+  </div>
 </body>
 </html>

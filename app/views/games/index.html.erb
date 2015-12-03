@@ -1,31 +1,28 @@
-<header id="title">
+<div class="page-header">
   <h1>Games</h1>
-</header>
+</div>
 
-<h3><%= link_to "Add a new game", new_game_path, :class => "do_button" %></h3>
+<%= link_to "Add a new game", new_game_path, class: "btn btn-success" %>
 
-<section class="information">
-  Click each game to see details or to edit/delete
-  <table>
-    <thead>
+<h2>Click each game to see details or to edit/delete</h2>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Players</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
       <tr>
-        <th>Name</th>
-        <th>Genre</th>
-        <th>Players</th>
+        <td><%= link_to "#{game.name}", game_path(game) %></td>
+        <td><%= game.genre.capitalize %></td>
+        <td><%= game.min_players %> to <%= game.max_players %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% @games.each do |game| %>
-        <tr>
-          <td><%= link_to "#{game.name}", game_path(game) %></td>
-          <td><%= game.genre.capitalize %></td>
-          <td><%= game.min_players %> to <%= game.max_players %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</section>
+    <% end %>
+  </tbody>
+</table>
 
-<footer id="footer">
-  <%= link_to "Back home", root_path %>
-</footer>
+<%= link_to "Back home", root_path, class: "btn btn-default" %>
