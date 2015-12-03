@@ -1,22 +1,22 @@
-<header id="title">
+<div class="page-header">
   <h1><%= @player.name %></h1>
-</header>
+</div>
 
-<%= link_to "Edit this player", edit_player_path(@player), :class => "do_button" %>
-<%= link_to "Delete this player", player_path(@player), method: :delete, data: { confirm: 'Are you sure?' }, :class => "do_button"  %>
+<%= link_to "Edit this player", edit_player_path(@player), class: "btn btn-info" %>
+<%= link_to "Delete this player", player_path(@player), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %>
+<%= link_to "Back to Players", players_path, class: "btn btn-default" %>
 
-<section class="information">
-  <h2 class="subtitle">Overview</h2>
-  <strong><%= @player.name %></strong> is <%= @player.age %> years old.
-    <%= @player.name %> lives in <%= @player.city %>, <%= @player.state %>.
-</section>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Overview</h2>
+    <p>
+      <strong><%= @player.name %></strong> is <%= @player.age %> years old.
+      <%= @player.name %> lives in <%= @player.city %>, <%= @player.state %>.
+    </p>
 
-
-<section class="information">
-  <h2 class="subtitle">Bio</h2>
-  <%= simple_format @player.bio %>
-</section>
-
-<footer id="footer">
-  <%= link_to "Back to Players", players_path %>
-</footer>
+    <h2>Bio</h2>
+    <p>
+      <%= simple_format @player.bio %>
+    </p>
+  </div>
+</div>
