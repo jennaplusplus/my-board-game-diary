@@ -1,45 +1,45 @@
-<header id="title">
+<div class="page-header">
   <h1>"<%= @meetup.name %>" on <%= @meetup.date.strftime("%b %d, %Y") %></h1>
-</header>
+</div>
 
-<%= link_to "Edit meetup info", edit_meetup_path(@meetup), :class => "do_button" %>
-<%= link_to "Delete this meetup", meetup_path(@meetup), method: :delete, data: { confirm: 'Are you sure?' }, :class => "do_button"  %>
+<%= link_to "Edit meetup info", edit_meetup_path(@meetup), class: "btn btn-info" %>
+<%= link_to "Delete this meetup", meetup_path(@meetup), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<%= link_to "Back to Meetups", meetups_path, class: "btn btn-default" %>
 
-<section class="information">
-  <h2 class="subtitle">Step 1: <%= link_to "Add players to this meetup", meetup_players_path(params[:id]) %></h2>
-  <% if @players.count > 0 %>
-    Players at this meetup (so far!):
-    <table>
-      <tbody>
-        <% @players.each do |player| %>
-          <tr>
-            <td><%= player.name %> <%= link_to "(remove?)", remove_meetup_player_path(meetup_id: params[:id], id: player.id), method: :patch, :class => "remove_link" %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% end %>
-</section>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Step 1: <%= link_to "Add players to this meetup", meetup_players_path(params[:id]) %></h2>
+      <% if @players.count > 0 %>
+        <h3>Players at this meetup (so far!):</h3>
+        <table class="table">
+          <tbody>
+            <% @players.each do |player| %>
+              <tr>
+                <td><%= player.name %> <%= link_to "(remove?)", remove_meetup_player_path(meetup_id: params[:id], id: player.id), method: :patch, :class => "remove_link" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+  </div>
+</div>
 
-<section class="information">
-  <h2 class="subtitle">Steps 2-100: <%= link_to "Add game events to this meetup", new_meetup_event_path(params[:id]) %> </h2>
-  <% if @games.count > 0 %>
-    Game events at this meetup (click for details or to edit/delete):
-    <table>
-      <tbody>
-        <% @meetup.events.each do |event| %>
-          <tr>
-            <td>
-              <%= link_to event.game.name, meetup_event_path(meetup_id: params[:id], id: event.id), :class => "event_link" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% end %>
-</section>
-
-
-<footer id="footer">
-  <%= link_to "Back to Meetups", meetups_path %>
-</footer>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Steps 2-100: <%= link_to "Add game events to this meetup", new_meetup_event_path(params[:id]) %> </h2>
+    <% if @games.count > 0 %>
+      <h3>Game events at this meetup (click for details or to edit/delete):</h3>
+      <table class="table">
+        <tbody>
+          <% @meetup.events.each do |event| %>
+            <tr>
+              <td>
+                <%= link_to event.game.name, meetup_event_path(meetup_id: params[:id], id: event.id), :class => "event_link" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
