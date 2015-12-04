@@ -1,15 +1,16 @@
-<%= form_for @meetup, url: @url_path do |f| %>
-  <fieldset class="form">
-    <legend>Meetup</legend>
-      <%= f.label :name, "Name: "%>
-      <%= f.text_field :name %>
-      <br>
-      <%= f.label :location, "Location: "%>
-      <%= f.text_field :location %>
-      <br>
-      <%= f.label :date, "Date: "%>
-      <%= f.date_field :date %>
-      <br>
-      <%= f.submit "#{button_text}" %>
-  </fieldset>
+<%= form_for @meetup, :html => { :class => "form" } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "Name: "%>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <br>
+    <%= f.label :location, "Location: "%>
+    <%= f.text_field :location, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date, "Date: "%>
+    <%= f.date_field :date, class: "form-control" %>
+  </div>
+  <%= f.submit "#{button_text}", class: "btn btn-success" %>
 <% end %>

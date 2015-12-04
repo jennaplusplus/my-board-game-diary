@@ -1,9 +1,7 @@
-<header id="title">
+<div class="page-header">
   <h1>Enter a new meetup</h1>
-</header>
+</div>
 
-<%= render partial: 'form', locals: { :button_text => "New Meetup" } %>
+<%= render partial: 'form', locals: { button_text: "New Meetup", method: :post } %>
 
-<footer id="footer">
-  <%= link_to "Back to Meetups", meetups_path %>
-</footer>
+<%= link_to "Back to Meetups", meetups_path, class: "btn btn-default footer" %>

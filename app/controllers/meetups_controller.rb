@@ -17,7 +17,6 @@ class MeetupsController < ApplicationController
 
   def new
     @meetup = Meetup.new
-    @url_path = meetups_path
   end
 
   def create
@@ -27,7 +26,6 @@ class MeetupsController < ApplicationController
 
   def edit
     @meetup = Meetup.find(params[:id])
-    @url_path = meetup_path
   end
 
   def update
