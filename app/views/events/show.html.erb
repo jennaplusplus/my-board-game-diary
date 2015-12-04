@@ -2,65 +2,62 @@
   <h1><%= @event.game.name %> at "<%= @event.meetup.name %>"</h1>
 </header>
 
-<%= link_to "Edit event info", edit_meetup_event_path(meetup_id: params[:meetup_id], id: params[:id]), :class => "do_button" %>
-<%= link_to "Delete this event",  meetup_event_path(meetup_id: params[:meetup_id], id: params[:id]), method: :delete, data: { confirm: 'Are you sure?' }, :class => "do_button"  %>
+<%= link_to "Edit event info", edit_meetup_event_path(meetup_id: params[:meetup_id], id: params[:id]), class: "btn btn-info" %>
+<%= link_to "Delete this event",  meetup_event_path(meetup_id: params[:meetup_id], id: params[:id]), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %>
+<%= link_to "Back to the Meetup", meetup_path(@event.meetup), class: "btn btn-default" %>
 
-
-<section class="information">
-  <h2 class="subtitle">Event Info</h2>
-  <table id="event_info">
-    <tbody>
-      <tr>
-        <td><strong>Players:</strong></td>
-        <td>
-          <% if @event.players.count > 1 %>
-            <%= @event.players.pluck(:name).join(", ") %>
-          <% else %>
-            <em>none entered</em>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Duration:</strong></td>
-        <td><% if @event.duration.present? %>
-              <%= @event.duration %> hour<%= "s" if @event.duration != 1 %>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Event Info</h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><strong>Players:</strong></td>
+          <td>
+            <% if @event.players.count > 1 %>
+              <%= @event.players.pluck(:name).join(", ") %>
             <% else %>
               <em>none entered</em>
             <% end %>
-         </td>
-      </tr>
-      <tr>
-        <td><strong>Outcome:</strong></td>
-        <td><% if @event.outcome.present? %>
-              <%= @event.outcome %>
-            <% else %>
-              <em>none entered</em>
-            <% end %>
-         </td>
-      </tr>
-      <tr>
-        <td><strong>Notes:</strong></td>
-        <td><% if @event.notes.present? %>
-              <%= @event.notes %>
-            <% else %>
-              <em>none entered</em>
-            <% end %>
-         </td>
-      </tr>
-      <tr>
-        <td><strong>Rating:</strong></td>
-        <td><% if @event.rating.present? %>
-              <%= @event.rating %> out of 10
-            <% else %>
-              <em>none entered</em>
-            <% end %>
-         </td>
-       </tr>
-    </tbody>
-  </table>
-</section>
-
-
-<footer id="footer">
-  <%= link_to "Back to the Meetup", meetup_path(@event.meetup) %>
-</footer>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Duration:</strong></td>
+          <td><% if @event.duration.present? %>
+                <%= @event.duration %> hour<%= "s" if @event.duration != 1 %>
+              <% else %>
+                <em>none entered</em>
+              <% end %>
+           </td>
+        </tr>
+        <tr>
+          <td><strong>Outcome:</strong></td>
+          <td><% if @event.outcome.present? %>
+                <%= @event.outcome %>
+              <% else %>
+                <em>none entered</em>
+              <% end %>
+           </td>
+        </tr>
+        <tr>
+          <td><strong>Notes:</strong></td>
+          <td><% if @event.notes.present? %>
+                <%= @event.notes %>
+              <% else %>
+                <em>none entered</em>
+              <% end %>
+           </td>
+        </tr>
+        <tr>
+          <td><strong>Rating:</strong></td>
+          <td><% if @event.rating.present? %>
+                <%= @event.rating %> out of 10
+              <% else %>
+                <em>none entered</em>
+              <% end %>
+           </td>
+         </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
