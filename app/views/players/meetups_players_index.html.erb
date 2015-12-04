@@ -1,40 +1,41 @@
-<header id="title">
+<div class="page-header">
   <h1>Players for this meetup</h1>
-</header>
+</div>
 
-<section class="information">
-  So far, you have <%= @players.count %> player<%= "s" if @players.count != 1 %> at this meetup.
-  <% if @players.count > 0 %>
-    <table>
-      <tbody>
-        <% @players.each do |player| %>
-          <tr>
-            <td><%= player.name %> <%= link_to "(remove?)", remove_meetup_player_path(meetup_id: params[:meetup_id], id: player.id), method: :patch %></td>
-          </tr>
-        <% end %>
-      </tbody>
+<div class="row">
+  <div class="col-md-12">
+    <h2>So far, you have <%= @players.count %> player<%= "s" if @players.count != 1 %> at this meetup.</h2>
+    <% if @players.count > 0 %>
+      <table class="table">
+        <tbody>
+          <% @players.each do |player| %>
+            <tr>
+              <td><%= player.name %> <%= link_to "(remove?)", remove_meetup_player_path(meetup_id: params[:meetup_id], id: player.id), method: :patch %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
     </table>
-  <% end %>
-  </table>
-</section>
+  </div>
+</div>
 
-<% if @meetup.players.count < Player.all.count %>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Add a player</h2>
+    <% if @meetup.players.count < Player.all.count %>
+      <%= form_for @meetup, url: add_meetup_player_path(params[:meetup_id]), method: :patch, :html => { class: "form" } do |f| %>
+        <div class="form-group">
+          <%= f.label :players, "Player to add: "%>
+          <%= f.collection_select(:players, Player.all.where.not(:id => @meetup.player_ids), :id, :name, class: "form-control") %>
+        </div>
+        <%= f.submit "Add Player", class: "btn btn-success" %>
+      <% end %>
+    <% else %>
+      <strong>No more players to add!</strong> <%= link_to "Create one!", new_player_path, class: "btn btn-primary" %>
+      </section>
+    <% end %>
+  </div>
+</div>
 
-  <%= form_for @meetup, url: add_meetup_player_path(params[:meetup_id]), method: :patch do |f| %>
-    <fieldset class="form" id="add_players_form">
-      <legend>Add Players to this Meetup</legend>
-        <%= f.label :players, "Player to add: "%>
-        <%= f.collection_select(:players, Player.all.where.not(:id => @meetup.player_ids), :id, :name) %>
-        <%= f.submit "Add Player" %>
-    </fieldset>
-  <% end %>
-<% else %>
-  <section class="information" id="no_more_players">
-    <strong>No more players to add!</strong> <%= link_to "(create one)", new_player_path %>
-  </section>
-<% end %>
-
-
-<footer id="footer">
-  <%= link_to "Back to #{@meetup.name}", meetup_path(@meetup) %>
-</footer>
+<%= link_to "Back to #{@meetup.name}", meetup_path(@meetup), class: "btn btn-default footer" %>
