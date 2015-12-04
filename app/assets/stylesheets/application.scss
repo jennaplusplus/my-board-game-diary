@@ -24,11 +24,17 @@
   margin-top: 10px;
 }
 
-.jumbotron {
+.jumbotron, .jumbotron h1 {
+  font-family: 'Patrick Hand', cursive;
   text-align: center;
   background-color: #B0C4DE;
 }
 
 h1, h2, h3 {
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: 'Ruda', sans-serif;
+}
+
+td {
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px;
 }
