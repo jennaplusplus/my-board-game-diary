@@ -10,7 +10,7 @@ class Game < ActiveRecord::Base
       end
     end
     if avg.length > 0
-      return avg.inject(0){|r, e| r + e} / avg.length
+      return avg.inject(0){|r, e| r + e}.to_f / avg.length.to_f
     else
       return nil
     end
