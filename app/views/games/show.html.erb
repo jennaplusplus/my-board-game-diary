@@ -14,11 +14,11 @@
       for <%= @game.min_players %> to <%= @game.max_players %> players.
       This game takes approximately <%= @game.time_to_play %> hour<%= "s" if @game.time_to_play != 1 %> to play.
     </p>
-    <% if !@game.avg_rating.nil? %>
+    <% if @game.avg_rating != nil %>
       <h4>
         Average Rating: <%= @game.avg_rating %>
       </h4>
-    <% elsif @game.avg_rating.nil? %>
+    <% elsif @game.avg_rating == nil %>
       <h4>
         This game's events are not yet rated.
       </h4>

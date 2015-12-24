@@ -56,3 +56,24 @@ meetups = [
 meetups.each do |meetup|
   Meetup.create(meetup)
 end
+
+# Event info
+# t.float    "duration"
+# t.text     "notes"
+# t.text     "outcome"
+# t.integer  "game_id"
+# t.integer  "meetup_id"
+# t.float    "rating"
+
+events = [
+  {game_id: 1, rating: 1},
+  {game_id: 1, rating: 3},
+  {game_id: 1, rating: 5},
+  {game_id: 2, rating: 2},
+  {game_id: 3, rating: 5},
+  {game_id: 3, rating: 4},
+]
+
+events.each do |event|
+  Event.create(event)
+end
