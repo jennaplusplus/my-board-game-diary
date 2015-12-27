@@ -66,12 +66,12 @@ end
 # t.float    "rating"
 
 events = [
-  {game_id: 1, rating: 1},
-  {game_id: 1, rating: 3},
-  {game_id: 1, rating: 5},
-  {game_id: 2, rating: 2},
-  {game_id: 3, rating: 5},
-  {game_id: 3, rating: 4},
+  {meetup_id: 1, game_id: 1, rating: 1},
+  {meetup_id: 1, game_id: 1, rating: 3},
+  {meetup_id: 1, game_id: 1, rating: 5},
+  {meetup_id: 1, game_id: 2, rating: 2},
+  {meetup_id: 1, game_id: 3, rating: 5},
+  {meetup_id: 1, game_id: 3, rating: 4},
 ]
 
 events.each do |event|
