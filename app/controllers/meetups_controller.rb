@@ -20,8 +20,13 @@ class MeetupsController < ApplicationController
   end
 
   def create
-    Meetup.create(meetup_params[:meetup])
-    redirect_to meetups_path
+    @meetup = Meetup.create(meetup_params[:meetup])
+    if @meetup.save
+      redirect_to meetups_path
+    else
+      render "new"
+    end
+
   end
 
   def edit
@@ -29,8 +34,12 @@ class MeetupsController < ApplicationController
   end
 
   def update
-    Meetup.update(params[:id], meetup_params[:meetup])
-    redirect_to meetups_path
+    @meetup = Meetup.update(params[:id], meetup_params[:meetup])
+    if @meetup.save
+      redirect_to meetups_path
+    else
+      render "new"
+    end
   end
 
   def add_players

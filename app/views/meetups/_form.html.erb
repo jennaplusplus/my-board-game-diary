@@ -1,3 +1,9 @@
+<ul>
+  <% @meetup.errors.full_messages.each do |message| %>
+    <li><strong><%= message %></strong></li>
+  <% end %>
+</ul>
+
 <%= form_for @meetup, :html => { :class => "form" } do |f| %>
   <div class="form-group">
     <%= f.label :name, "Name: "%>
