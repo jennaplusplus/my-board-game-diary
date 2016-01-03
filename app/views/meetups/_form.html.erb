@@ -1,8 +1,10 @@
-<ul>
-  <% @meetup.errors.full_messages.each do |message| %>
-    <li><strong><%= message %></strong></li>
-  <% end %>
-</ul>
+<div class="validation-errors">
+  <ul>
+    <% @meetup.errors.full_messages.each do |message| %>
+      <li><strong><%= message %></strong></li>
+    <% end %>
+  </ul>
+</div>
 
 <%= form_for @meetup, :html => { :class => "form" } do |f| %>
   <div class="form-group">
