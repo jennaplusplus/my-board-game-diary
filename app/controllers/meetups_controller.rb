@@ -38,7 +38,7 @@ class MeetupsController < ApplicationController
     if @meetup.save
       redirect_to meetups_path
     else
-      render "new"
+      render "edit"
     end
   end
 

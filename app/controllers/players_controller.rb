@@ -37,9 +37,9 @@ class PlayersController < ApplicationController
   def update
     @player = Player.update(params[:id], player_params[:player])
     if @player.save
-    redirect_to players_path
+      redirect_to players_path
     else
-      render "new"
+      render "edit"
     end
   end
 
