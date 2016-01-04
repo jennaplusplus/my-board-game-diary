@@ -17,8 +17,13 @@ class PlayersController < ApplicationController
   end
 
   def create
-    Player.create(player_params[:player])
-    redirect_to players_path
+    @player = Player.create(player_params[:player])
+    if @player.save
+      redirect_to players_path
+    else
+      render "new"
+    end
+
   end
 
   def show
@@ -30,8 +35,12 @@ class PlayersController < ApplicationController
   end
 
   def update
-    Player.update(params[:id], player_params[:player])
-    redirect_to players_path
+    @player = Player.update(params[:id], player_params[:player])
+    if @player.save
+      redirect_to players_path
+    else
+      render "edit"
+    end
   end
 
   def destroy
