@@ -6,7 +6,31 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <link href='https://fonts.googleapis.com/css?family=Patrick+Hand|Nunito:400,300,700|Ruda:400,700,900|Capriola|Cabin|Titillium+Web|Dosis' rel='stylesheet' type='text/css'>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="jumbotron">
+      <h1>My Board Game Diary!</h1>
+    </div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <%= link_to meetups_path, class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Meetups
+    <% end %>
+    <%= link_to players_path, class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Players
+    <% end %>
+    <%= link_to games_path, class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-knight" aria-hidden="true"></span> Games
+    <% end %>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
 <body>
   <div class="container">
     <%= yield %>
